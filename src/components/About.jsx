@@ -5,12 +5,7 @@ import { CheckCircle } from 'lucide-react';
 
 const About = () => {
   const features = [
-    'Over 10 years of industry experience',
-    'Team of certified business consultants',
-    'Tailored solutions for businesses of all sizes',
-    'Proven track record of successful client outcomes',
-    'Continuous innovation and adaptation to market trends',
-    'Commitment to ethical business practices',
+    'Javascript','python(its easy)','C/C++','C#',
   ];
 
   return (
@@ -26,7 +21,7 @@ const About = () => {
           >
             <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl blur-3xl"></div>
             <div className="relative">
-              <img  className="rounded-3xl shadow-xl" alt="Business professionals in a meeting" src="https://images.unsplash.com/photo-1590098563652-6066ea95bfa7" />
+              <img  className="rounded-3xl shadow-xl" alt="" src="" />
             </div>
           </motion.div>
           
@@ -36,16 +31,23 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              About <span className="gradient-text">Nexus Solutions</span>
-            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              About me
+            </h3>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Founded in 2013, Nexus Solutions has been at the forefront of business consulting and strategic development. We combine industry expertise with innovative approaches to help businesses navigate challenges and capitalize on opportunities.
+            <p className="text-lg text-gray-400 dark:text-gray-300 mb-6">
+            Hey! I’m a Computer Science student at the University of Minho. 
+            I’m really into cybersecurity, servers, and data structures. 
+            I love figuring out how systems work and how to make them faster and safer. 
+            Always curious and learning something new!
+           
             </p>
-            
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Our mission is to empower organizations through transformative solutions that drive sustainable growth and operational excellence. We believe in building long-term partnerships with our clients, becoming an extension of their team.
+
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+  
+            </h3>
+            <p className="text-lg text-gray-400 dark:text-gray-300 mb-8">
+              
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

@@ -8,7 +8,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 
 function App() {
   const { toast } = useToast();
@@ -20,7 +19,7 @@ function App() {
     setTimeout(() => {
       toast({
         title: "> Portfolio loaded",
-        description: "Welcome to my digital space. Scroll to explore.",
+        description: "Welcome. Scroll to explore.",
         className: "font-mono bg-black border border-green-500/20",
       });
     }, 2000);
@@ -49,7 +48,7 @@ function App() {
         )}
       </AnimatePresence>
       
-      <Footer />
+
       <Toaster />
     </div>
   );

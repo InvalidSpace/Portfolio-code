@@ -6,31 +6,14 @@ import { Github, ExternalLink, Star, GitFork } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Project One",
-      description: "A web application built with React and Node.js that helps developers manage their projects efficiently.",
-      tech: ["React", "Node.js", "MongoDB", "TailwindCSS"],
-      github: "https://github.com/yourusername/project-one",
-      live: "https://project-one.com",
-      stars: 45,
-      forks: 12
+      title: "UraniuSpace",
+      description: "My very own website honestly just a way to me to learn some webdes",
+      tech: [ "Node.js", "JavaScript", "CSS","HTML"],
+      github: "https://github.com/InvalidSpace/Portfolio-code",
+      live: "https://uraniuspace.com",
+      stars: 1,
+      forks: 0
     },
-    {
-      title: "Project Two",
-      description: "An open-source library for handling complex state management in modern web applications.",
-      tech: ["TypeScript", "React", "Redux", "Jest"],
-      github: "https://github.com/yourusername/project-two",
-      live: "https://project-two.com",
-      stars: 128,
-      forks: 34
-    },
-    {
-      title: "Project Three",
-      description: "A developer tool that automates the process of code review and documentation generation.",
-      tech: ["Python", "FastAPI", "Docker", "PostgreSQL"],
-      github: "https://github.com/yourusername/project-three",
-      stars: 89,
-      forks: 23
-    }
   ];
 
   return (
@@ -46,7 +29,7 @@ const Projects = () => {
             {'> Featured Projects_'}
           </h2>
           <p className="text-gray-400 font-mono">
-            A selection of my recent work and open source contributions
+            Just one still, but it will grow i can assure you that!
           </p>
         </motion.div>
 

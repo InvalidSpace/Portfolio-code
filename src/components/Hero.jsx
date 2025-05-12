@@ -23,9 +23,10 @@ const Hero = () => {
             <span className="font-mono text-green-500 text-sm">
               <TypewriterComponent
                 options={{
-                  strings: ['> Hello, World!', '> Welcome to my portfolio', '> Ready'],
+                strings: ['> Hello, World!', '> Welcome to my personal site!', '> thanks for cuming ??','> i know that this is preaty slick','> love the asthetic honestly','> i can write whatever i want honestly '],
                   autoStart: true,
-                  loop: false,
+                  loop: true,
+                  random: true,
                 }}
               />
             </span>
@@ -37,7 +38,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-4xl md:text-6xl font-mono mb-6 text-green-500"
           >
-            I build things for the web.
+            Welcome
           </motion.h1>
 
           <motion.p
@@ -46,8 +47,10 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-gray-400 mb-8 font-mono max-w-2xl"
           >
-            I'm a software developer specializing in building exceptional digital experiences. 
-            Currently, I'm focused on creating accessible, human-centered products.
+            I'm a student still and this is my personal website.
+            It's still simple, but I have plans to expand it over time.
+            My GitHub doesn’t have many projects yet,
+            but I'm always learning and experimenting — I hope to share more there soon too.
           </motion.p>
 
           <motion.div
@@ -61,7 +64,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/InvalidSpace" 
               target="_blank" 
               rel="noopener noreferrer"
               className="retro-button inline-flex items-center"

@@ -19,46 +19,59 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = (e) => {
+//formintergrations
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+  
+    try {
+      const response = await fetch('https://formspree.io/f/xgvknaro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        })
+      });
+  
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you as soon as possible.",
+          variant: "default",
+        });
+  
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        toast({
+          title: "Something went wrong.",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
-        variant: "default",
+        title: "Network error.",
+        description: "Unable to send message.",
+        variant: "destructive",
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
-    }, 1500);
+    }
+  
+    setIsSubmitting(false);
   };
+  
 
   const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6 text-blue-600" />,
-      title: 'Email Us',
-      details: 'info@nexussolutions.com',
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-blue-600" />,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-blue-600" />,
-      title: 'Visit Us',
-      details: '123 Business Avenue, Suite 500, New York, NY 10001',
-    },
   ];
 
   return (
@@ -72,21 +85,20 @@ const Contact = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="gradient-text">Touch</span>
+           You can try to contact me 
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Have questions or ready to start your business transformation? Contact us today for a consultation.
-          </p>
+          <h2 className="text-3xl md:text-2xl font-sans">
+          and this works i made sure of it
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
@@ -109,21 +121,14 @@ const Contact = () => {
               ))}
             </div>
             
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">Business Hours</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-gray-600 dark:text-gray-300">Saturday - Sunday: Closed</p>
-            </div>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8"
           >
-            <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -137,7 +142,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
+                  className="bg-black  w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
                   placeholder="Your name"
                 />
               </div>
@@ -153,7 +158,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
+                  className="bg-black w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -168,8 +173,8 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
-                  placeholder="(555) 123-4567"
+                  className="bg-black w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
+                  placeholder=" +XXX 123-456-789"
                 />
               </div>
               
@@ -184,7 +189,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
+                  className="bg-black w-full px-5 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>

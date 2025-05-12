@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <span className="text-2xl font-mono text-green-500">&gt; Portfolio_</span>
+              <span className="text-2xl font-mono text-green-500">&gt; InvalidSpace Folio_</span>
             </a>
           </div>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/InvalidSpace"
               target="_blank"
               rel="noopener noreferrer"
               className="retro-button flex items-center gap-2"
@@ -103,7 +103,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/InvalidSpace"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="retro-button flex items-center gap-2 justify-center w-full mt-4"
