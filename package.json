@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://Invalidspace.github.io/Portfolio-code",
+  "homepage": "https://www.uraniuspace.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
