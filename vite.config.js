@@ -183,6 +183,7 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
+	base: '/portfolio-code/',
 	customLogger: logger,
 	plugins: [react(), addTransformIndexHtml],
 	server: {
